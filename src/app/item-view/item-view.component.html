@@ -1,0 +1,25 @@
+<div>
+  <h1>
+    Hola
+  </h1>
+  <label>
+    Bienvenido, busque su producto
+  </label>
+ 
+ <input #name> 
+  <button (click) = "Getitems(name.value)">
+    Buscar
+  </button>
+
+</div>
+
+<div *ngIf="items">
+  <h2>Lista de Articulos</h2>
+  <ul class="list-items">
+    <li *ngFor="let item of items">
+      <div class="title"><label>Tilte: {{item.title}}</label></div>
+      <div class="price"><label>Price: {{item.price}}</label></div>
+      <div class="thumbnail"><img src="{{item.thumbnail}}"></div>
+  </li>
+  </ul>
+</div>
